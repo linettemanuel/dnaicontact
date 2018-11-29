@@ -1,11 +1,13 @@
 var body = document.getElementsByTagName("body");
 var parent = document.getElementById("parent");
 var child = document.querySelectorAll("#child-div");
-var last = document.querySelector(".child-last");
-var first = document.querySelector(".first-child");
+var last = document.querySelector(".last-child");
+var second = document.querySelector(".second-child");
 var container = document.querySelector(".main-container");
 var video = document.querySelector(".video");
 var icons = document.querySelectorAll(".icon");
+var arrow = document.querySelector("#scroll-arrow");
+
 
 
 window.onload = () => {
@@ -23,6 +25,8 @@ window.onload = () => {
 }
 
 
+
+
 parent.onscroll = () => {
   child.forEach ( (item, index) => {
 
@@ -31,6 +35,13 @@ parent.onscroll = () => {
       item.classList.add("appearUp");
       addClassToChildren(childrenList, "appearUp");
       changeOpacity(item);
+    }
+    if ((last.getBoundingClientRect().top < 450) && (last.getBoundingClientRect().top > 0)) {
+      arrow.src="./image/arrowDown.svg";
+      arrow.style.animation = "scrollDown 2s ease infinite";
+    } else {
+      arrow.src="./image/arrowUp.svg";
+      arrow.style.animation = "scrollUp 2s ease infinite";
     }
   })
 }

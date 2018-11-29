@@ -512,12 +512,12 @@ footer {
 @keyframes scrollDown {
   from {
       opacity: 0;
-      transform: translateY(-50px);
+      transform: translateY(0px);
 }
 
   to {
       opacity: 1;
-      transform : translateY(0);
+      transform : translateY(30px);
   }
 }
 
