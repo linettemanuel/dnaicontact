@@ -5,11 +5,23 @@ var last = document.querySelector(".child-last");
 var first = document.querySelector(".first-child");
 var container = document.querySelector(".main-container");
 var video = document.querySelector(".video");
+var icons = document.querySelectorAll(".icon");
+
 
 window.onload = () => {
   addClassToChildren(body,"fadeIn");
   changeOpacity(body[0]);
+  icons.forEach ((icon, index) => {
+    setTimeout(() => {
+      icon.style.color = "#59ce23";
+      icon.style.transform = "scale(1.3)";
+      icon.style.transition = "0.5s ease";
+      removeStyling(icon);
+    }, 2000 * (index + 1));
+
+  });
 }
+
 
 parent.onscroll = () => {
   child.forEach ( (item, index) => {
@@ -21,6 +33,14 @@ parent.onscroll = () => {
       changeOpacity(item);
     }
   })
+}
+
+function removeStyling(e) {
+  setTimeout (() => {
+    e.style.color = "#fff";
+    e.style.transform = "scale(1)";
+  }, 1000)
+
 }
 
 
