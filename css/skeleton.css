@@ -363,15 +363,21 @@ hr {
     text-align: center;
     text-transform: uppercase;
     font-weight: lighter;
+    letter-spacing:5px;
+}
+
+.icon-area i {
+  text-shadow: 1px 3px 3px rgba(255, 255, 255, 0.3);
 }
 
 .icon-area {
     font-size: 150%;
+    margin-left: -3%;
 }
 
 .scroll img {
-    margin-left: 25%;
-    animation: scrollDown 2s ease infinite;
+    margin-left: 46%;
+    animation: scrollUp 2s ease infinite;
 }
 
 .switch-lang-area ul li:hover {
@@ -512,6 +518,18 @@ footer {
   to {
       opacity: 1;
       transform : translateY(0);
+  }
+}
+
+@keyframes scrollUp {
+  from {
+      opacity: 0;
+      transform: translateY(50px);
+}
+
+  to {
+      opacity: 1;
+      transform : translateY(0px);
   }
 }
 
